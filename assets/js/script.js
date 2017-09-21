@@ -5,9 +5,10 @@ var app =  angular.module("computer", ['ngRoute'])
                 templateUrl: 'main.html',
                 controller: 'MainCtrl'
             })
-            .otherwise({redirectTo:'main'});
+            .otherwise({redirectTo:'/main'});
 
     }])
-    .controller('MainCtrl', [function(){
+    .controller('MainCtrl', ['$scope', function($scope){
         console.log('This is the main controller');
+
     }]);

@@ -6,4 +6,12 @@
     .jumbotron {
         text-align: center;
     }
+
+    nav ul li a {
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
 }
