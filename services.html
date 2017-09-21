@@ -1,61 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="assets/img/favicon.ico">
-    <title>Angular and Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="masthead">
-        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
-            <ul class="navbar-nav text-md-center nav-justified w-100">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#/main">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/contact">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Example row of columns -->
+<div ng-repeat="service in services">
     <div class="row">
-        <div class="col-lg-12">
-            <h2>About Our Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                fermentum massa.</p>
+        <div class="col-lg-4 image-service-box">
+            <img ng-src="{{service.image}}">
+        </div>
+        <div class="col-lg-8">
+            <h2>{{service.name}}</h2>
+            <p>{{service.description}}</p>
             <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div>
     </div>
-
-    <!-- Site footer -->
-    <footer class="footer">
-        <p>&copy; Company 2017</p>
-    </footer>
-
-</div> <!-- /container -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-route.min.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
-</html>
+</div>
