@@ -5,8 +5,8 @@ var app =  angular.module("computer", ['ngRoute'])
                 templateUrl: 'main.html',
                 controller: 'MainCtrl'
             })
-            .when('/about', {
-                templateUrl: 'about.html',
+            .when('/gallery-submodule', {
+                templateUrl: 'submodule/index.html',
                 controller: 'MainCtrl'
             })
             .when('/services', {
