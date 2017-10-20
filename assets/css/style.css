@@ -10,6 +10,22 @@
     width: 100%;
 }
 
+.form-control {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+}
+
+.form-control.ng-invalid {
+    border: 2px solid #dd0000;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 767px) {
     .jumbotron {
         text-align: center;
