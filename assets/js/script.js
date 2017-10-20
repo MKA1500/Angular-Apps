@@ -15,7 +15,7 @@ var app =  angular.module("computer", ['ngRoute'])
             })
             .when('/contact', {
                 templateUrl: 'contact.html',
-                controller: 'ContactCtrl'
+                controller: 'FormCtrl'
             })
             .otherwise({redirectTo:'/main'});
 
@@ -29,6 +29,17 @@ var app =  angular.module("computer", ['ngRoute'])
             console.log($scope.services);
         });
     }])
-    .controller('ContactCtrl', ['$scope', function($scope){
-        console.log('This is the contact controller');
+    .controller('FormCtrl', ['$scope', function($scope){
+
+        $scope.newUser = {};
+
+        $scope.submitForm = function () {
+            $scope.newUser.email = $scope.user.email;
+            $scope.newUser.password = $scope.user.password;
+
+            console.log($scope.newUser);
+
+            $scope.user.email = "";
+            $scope.user.password = "";
+        }
     }]);
