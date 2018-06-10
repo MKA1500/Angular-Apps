@@ -1,0 +1,6 @@
+.alert.alert-success {
+  background: url('/assets/success.png') #c3e6cb;
+  background-repeat: no-repeat;
+  background-position: 0.25rem 0.25rem;
+  background-size: 2.5rem;
+}
