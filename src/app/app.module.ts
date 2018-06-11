@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -14,6 +15,7 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { CheckboxesMaterialComponent } from './checkboxes-material/checkboxes-material.component';
 import { HeaderComponent } from './header/header.component';
 import { RadioMaterialComponent } from './radio-material/radio-material.component';
+import { SelectComponent } from './select/select.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,16 @@ import { RadioMaterialComponent } from './radio-material/radio-material.componen
     SuccessAlertComponent,
     CheckboxesMaterialComponent,
     HeaderComponent,
-    RadioMaterialComponent
+    RadioMaterialComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
