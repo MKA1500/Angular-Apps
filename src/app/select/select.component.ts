@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent implements OnInit {
-
+  colors = [
+    { id: 1, name: 'Red'},
+    { id: 2, name: 'Green'},
+    { id: 3, name: 'Blue'},
+    { id: 4, name: 'Pink'}
+  ];
+  color = 2;
   constructor() { }
 
   ngOnInit() {
