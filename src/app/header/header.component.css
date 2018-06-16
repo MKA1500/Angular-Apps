@@ -7,3 +7,6 @@ mat-form-field {
     width: 100%;
     max-width: 23rem;
 }
+span[matPrefix] {
+  padding-right: 0.5rem;
+}
