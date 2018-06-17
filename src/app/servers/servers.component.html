@@ -1,4 +1,7 @@
-<button class="btn btn-primary">Add Server</button>
+<button
+  mat-stroked-button
+  [disabled]="!allowNewServer">Add Server</button>
+  <p [innerText]="allowNewServer"></p>
 <div class="servers">
   <app-server></app-server>
   <app-server></app-server>

@@ -3,10 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -38,7 +35,8 @@ import { SelectComponent } from './select/select.component';
     MatRadioModule,
     MatSelectModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
