@@ -10,3 +10,20 @@ mat-form-field {
 span[matPrefix] {
   padding-right: 0.5rem;
 }
+
+.header-container {
+  max-width: 23rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 390px) {
+  .logo-wrap {
+    display: none;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}

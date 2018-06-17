@@ -1,3 +1,9 @@
 .servers {
   margin-top: 1rem;
 }
+.add-server-tow {
+  min-height: 6.7rem;
+  max-width: 25rem;
+  margin: 0 auto;
+  padding: 0;
+}

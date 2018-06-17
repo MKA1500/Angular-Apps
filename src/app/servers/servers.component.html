@@ -1,7 +1,23 @@
-<button
-  mat-stroked-button
-  [disabled]="!allowNewServer">Add Server</button>
-  <p [innerText]="allowNewServer"></p>
+<div class="row add-server-tow">
+  <div class="col-6">
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="Server name"
+        (input)="onUpdateServerName($event)"
+        required>
+    </mat-form-field>
+    <p>{{ serverName }}</p>
+  </div>
+  <div class="col-6">
+    <button
+      mat-stroked-button
+      [disabled]="!allowNewServer"
+      (click)="onCreateServer()">Add Server</button>
+  </div>
+</div>
+  <!-- <p [innerText]="allowNewServer"></p> -->
+  <p>{{ serverCreationStatus }}</p>
 <div class="servers">
   <app-server></app-server>
   <app-server></app-server>
