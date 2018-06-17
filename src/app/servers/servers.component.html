@@ -1,10 +1,17 @@
 <div class="row add-server-tow">
   <div class="col-6">
-    <mat-form-field class="example-full-width">
+    <!-- <mat-form-field class="example-full-width">
       <input
         matInput
         placeholder="Server name"
         (input)="onUpdateServerName($event)"
+        required>
+    </mat-form-field> -->
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="Server name"
+        [(ngModel)]="serverName"
         required>
     </mat-form-field>
     <p>{{ serverName }}</p>
