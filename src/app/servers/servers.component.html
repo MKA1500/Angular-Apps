@@ -14,7 +14,6 @@
         [(ngModel)]="serverName"
         required>
     </mat-form-field>
-    <p>{{ serverName }}</p>
   </div>
   <div class="col-6">
     <button
@@ -24,7 +23,8 @@
   </div>
 </div>
   <!-- <p [innerText]="allowNewServer"></p> -->
-  <p>{{ serverCreationStatus }}</p>
+  <!-- <p>{{ serverCreationStatus }}</p> -->
+  <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 <div class="servers">
   <app-server></app-server>
   <app-server></app-server>
