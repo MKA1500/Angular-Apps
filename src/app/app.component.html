@@ -1,6 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header></app-header>
 <div class="container">
+  <div>
+    <button class="btn btn-primary" (click)="onToggleDetails()">
+      Display details
+    </button>
+    <div class="secret-text-wrap">
+      <p *ngIf="showSecret">Secret password = joł</p>
+    </div>
+    <div
+      *ngFor="let logItem of log, let i = index"
+      [ngStyle]="{backgroundColor: (logItem%3 === 0) ? '#1e65d8' : '#d6cbcb'}"
+      [ngClass]="{'white-text': (logItem%3 === 0)}"
+      >{{ i }} : {{logItem }}</div>
+  </div>
   <app-servers></app-servers>
   <div class="row">
     <div class="col-sm-6">
