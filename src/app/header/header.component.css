@@ -1,5 +1,4 @@
 header {
-  padding: 1rem;
   background-color: #f2f2f2;
   text-align: center;
 }
@@ -12,7 +11,7 @@ span[matPrefix] {
 }
 
 .header-container {
-  max-width: 23rem;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;

@@ -8,8 +8,6 @@ import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, Mat
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { CheckboxesMaterialComponent } from './checkboxes-material/checkboxes-material.component';
 import { HeaderComponent } from './header/header.component';
 import { RadioMaterialComponent } from './radio-material/radio-material.component';
@@ -20,8 +18,6 @@ import { SelectComponent } from './select/select.component';
     AppComponent,
     ServerComponent,
     ServersComponent,
-    WarningAlertComponent,
-    SuccessAlertComponent,
     CheckboxesMaterialComponent,
     HeaderComponent,
     RadioMaterialComponent,
