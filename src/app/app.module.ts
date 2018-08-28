@@ -12,6 +12,7 @@ import { CheckboxesMaterialComponent } from './checkboxes-material/checkboxes-ma
 import { HeaderComponent } from './header/header.component';
 import { RadioMaterialComponent } from './radio-material/radio-material.component';
 import { SelectComponent } from './select/select.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SelectComponent } from './select/select.component';
     CheckboxesMaterialComponent,
     HeaderComponent,
     RadioMaterialComponent,
-    SelectComponent
+    SelectComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
