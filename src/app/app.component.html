@@ -1,29 +1,34 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-header></app-header>
-<app-sidebar></app-sidebar>
 <div class="container">
-  <div>
-    <button class="btn btn-primary" (click)="onToggleDetails()">
-      Display details
-    </button>
-    <div class="secret-text-wrap">
-      <p *ngIf="showSecret">Secret password = joł</p>
-    </div>
-    <div
-      *ngFor="let logItem of log, let i = index"
-      [ngStyle]="{backgroundColor: (logItem%3 === 0) ? '#1e65d8' : '#d6cbcb'}"
-      [ngClass]="{'white-text': (logItem%3 === 0)}"
-      >{{ i }} : {{logItem }}</div>
-  </div>
-  <app-servers></app-servers>
   <div class="row">
-    <div class="col-sm-6">
-      <app-radio-material></app-radio-material>
+    <div class="col-xs-12">
+      <p>Add new Servers or blueprints!</p>
+      <label>Server Name</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <label>Server Content</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <br>
+      <button
+        class="btn btn-primary"
+        (click)="onAddServer()">Add Server</button>
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint()">Add Server Blueprint</button>
     </div>
-    <div class="col-sm-6">
-      <app-select></app-select>
-      <app-checkboxes-material></app-checkboxes-material>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <div
+        class="panel panel-default"
+        *ngFor="let element of serverElements">
+        <div class="panel-heading">{{ element.name }}</div>
+        <div class="panel-body">
+          <p>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
->

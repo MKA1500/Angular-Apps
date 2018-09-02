@@ -6,11 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  showSecret = false;
-  log = [];
+  serverElements = [];
+  newServerName = '';
+  newServerContent = '';
 
-  onToggleDetails() {
-    this.showSecret = !this.showSecret;
-    this.log.push(new Date());
+  onAddServer() {
+    this.serverElements.push({
+      type: 'server',
+      name: this.newServerName,
+      content: this.newServerContent
+    });
+  }
+
+  onAddBlueprint() {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: this.newServerName,
+      content: this.newServerContent
+    });
   }
 }
