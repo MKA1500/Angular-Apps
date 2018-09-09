@@ -8,6 +8,19 @@
       <app-server-element
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement">
+        <!-- supported by ng-content in this component... -->
+        <p>
+          <strong
+            class="red"
+            *ngIf="serverElement.type === 'server'">
+            {{ serverElement.content }}
+          </strong>
+          <strong
+            class="blue"
+            *ngIf="serverElement.type === 'blueprint'">
+            {{ serverElement.content }}
+          </strong>
+        </p>
       </app-server-element>
     </div>
   </div>
