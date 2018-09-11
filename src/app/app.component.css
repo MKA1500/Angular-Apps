@@ -4,3 +4,7 @@
 .p-5 {
   padding-bottom: 1rem;
 }
+
+button {
+    margin-right: 5px;
+}

@@ -7,8 +7,12 @@
     <div class="col-xs-12">
       <div class="p-5">
         <button
-          class="btn btn-default"
-          (click)="onChangeFirst()">Change First Element</button>
+          class="btn btn-success"
+          (click)="onChangeFirst()"
+          [disabled]="!this.serverElements[0]">Change First Element</button>
+        <button
+          class="btn btn-danger"
+          (click)="onDestroyFirst()">Destroy First Element</button>
       </div>
       <app-server-element
         *ngFor="let serverElement of serverElements"
