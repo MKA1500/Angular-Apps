@@ -18,13 +18,19 @@
           <li
             class="list-group-item"
             [ngClass]="{even: even % 2 === 0}"
-            *ngFor="let even of evenNumbers">
+            *ngFor="let even of evenNumbers"
+            [appBetterHighlight]="'#5400ff'"
+            defaultColor='#cdb5ff'>
+            <!-- the same as [defaultColor]="'#cdb5ff'"-->
             {{ even }}
           </li>
         </div>
       </ul>
       <p appBasicHighlight>Style me with basic directive</p>
-      <p appBetterHighlight>Style me with better directive - TRY MOUSE ENTER AND LEAVE</p>
+      <p [appBetterHighlight]="'#00ff69'"
+        [defaultColor]="'#f4ffd6'">
+        Style me with better directive - TRY MOUSE ENTER AND LEAVE
+      </p>
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
       </ng-template>
