@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { UserService } from '../services/user.service';
+import { Observable } from 'rxjs/Observable';
+import { DataSource } from '@angular/cdk/collections';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-table',
@@ -9,4 +12,14 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 
 export class TableComponent {
 
+}
+
+export class UserDataSource extends DataSource<any> {
+  constructor(private userService: UserService) {
+    super();
+  }
+  connect(): Observable<User[]> {
+    return this.userService.getUser();
+  }
+  disconnect() {}
 }
