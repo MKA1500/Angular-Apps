@@ -1,2 +1,14 @@
-<p>User with ID _ID_ loaded.</p>
-<p>User name is _NAME_</p>
+<p>User with ID {{ user.id }} loaded.</p>
+<p>User name is {{ user.name }}</p>
+<a
+  class="btn btn-warning"
+  [routerLink]="['/users', 2, 'Anna']">Load Anna</a>
+<a
+  class="btn btn-primary"
+  [routerLink]="['/users', 4, 'Joe']">Load Joe</a>
+<a
+  class="btn btn-danger"
+  [routerLink]="['/users', 5, 'Andy']">Load Andy</a>
+<a
+  class="btn btn-success"
+  [routerLink]="['/users', 6, 'Emma']">Load Emma</a>
