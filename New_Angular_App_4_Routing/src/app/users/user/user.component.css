@@ -1,3 +1,16 @@
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.btns2 {
+  padding-top: 20px;
+}
 .btn {
-  margin-right: 5px;
+  margin: 3px;
+  min-width: 102px;
+}
+
+.btns2 .btn {
+  max-width: 110px;
 }
