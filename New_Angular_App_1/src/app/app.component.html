@@ -1,11 +1,10 @@
 <div class="container">
-  <app-cockpit
-    (serverCreated)="onServerAdded($event)"
-    (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
-  <hr>
   <div class="row">
-    <div class="col-xs-12">
-      <div class="p-5">
+    <div class="col-sm-7">
+      <app-cockpit
+        (serverCreated)="onServerAdded($event)"
+        (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+      <div class="more-btns">
         <button
           class="btn btn-success"
           (click)="onChangeFirst()"
@@ -14,6 +13,16 @@
           class="btn btn-danger"
           (click)="onDestroyFirst()">Destroy First Element</button>
       </div>
+      {{ childData }}
+    </div>
+    <div class="col-sm-5 aside-ui">
+      <app-aside-ui
+        (childEvent)="childData=$event"
+        [parentData]="transporter"></app-aside-ui>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       <app-server-element
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"

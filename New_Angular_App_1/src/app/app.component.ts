@@ -11,6 +11,8 @@ export class AppComponent {
     name: 'Testserver',
     content: 'Just a test!'
   }];
+  public transporter = "Some string";
+  public childData = "";
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({

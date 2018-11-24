@@ -1,0 +1,12 @@
+
+<select
+  class="form-control"
+  (change)="fireEvent()"
+  [(ngModel)]="selectedColor">
+  <option
+    *ngFor="let color of colors">{{ color }}</option>
+</select>
+<p>
+  aside-ui works!
+</p>
+<p>{{ parentData }}</p>
