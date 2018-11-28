@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { interval } from 'rxjs';
 import 'rxjs/Rx';
 import { Observer } from 'rxjs/Observer';
 
@@ -15,14 +14,31 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // const source = interval(1000);
-    // //output: 0,1,2,3,4,5....
-    // const subscribe = source.subscribe(val => console.log(val));
+    // const myNumbers = Observable.interval(1000);
+    // myNumbers.subscribe(
+    //   (number: number) => {
+    //     console.log(number);
+    //   }
+    // );
 
-    const myObservable = Observable.create((observer: Observer) => {
+    const myObservable = Observable.create((observer: Observer<string>) => {
       setTimeout(() => {
-        observer.next();
-      }, 2000)
+        observer.next('first package');
+      }, 1000);
+      setTimeout(() => {
+        observer.next('second package');
+      }, 2000);
+      setTimeout(() => {
+        observer.complete();
+      }, 3000);
+      setTimeout(() => {
+        observer.next('third package');
+      }, 4000);
     });
+    myObservable.subscribe(
+      (data: string) => { console.log(data); },
+      (error: string) => { console.log(error); },
+      () => { console.log('completed') }
+    );
   }
 }
