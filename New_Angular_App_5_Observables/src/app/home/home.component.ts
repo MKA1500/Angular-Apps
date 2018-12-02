@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 import { Observer } from 'rxjs/Observer';
 import { Subscription } from 'rxjs/Subscription';
 import { interval } from 'rxjs';
+import { take } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -25,6 +26,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     //     console.log(number);
     //   }
     // );
+    const numbers = interval(1000);
+    const takeFourNumbers = numbers.pipe(take(4));
+    takeFourNumbers.subscribe(x => console.log('Next: ', x));
 
     const myObservable = Observable.create((observer: Observer<string>) => {
       setTimeout(() => {
