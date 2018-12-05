@@ -1,11 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/Rx';
-import { Observer } from 'rxjs/Observer';
-import { Subscription } from 'rxjs/Subscription';
-import { interval } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { Observable, Observer, Subscription, interval } from 'rxjs';
+import { take, map } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,14 +14,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
-    // ERROR TypeError: rxjs_Observable__WEBPACK_IMPORTED_MODULE_1__.Observable.interval is not a function
-
-    // const myNumbers = Observable.interval(1000);
-    // this.numbersObsSubscription = myNumbers.subscribe(
-    //   (number: number) => {
-    //     console.log(number);
-    //   }
-    // );
+    const myNumbers = interval(1000)
+      .pipe(map(
+        (data: number) => {
+          return data * 2;
+        }
+      ));
+    this.numbersObsSubscription = myNumbers.subscribe(
+      (number: number) => {
+        console.log(number);
+      }
+    );
     const numbers = interval(1000);
     const takeFourNumbers = numbers.pipe(take(4));
     takeFourNumbers.subscribe(x => console.log('Next: ', x));
@@ -52,7 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.numbersObsSubscription.unsubscribe();
+    this.numbersObsSubscription.unsubscribe();
     this.customObsSubscription.unsubscribe();
   }
 }
