@@ -10,3 +10,11 @@ export class AddNewrx implements Action {
 
   constructor(public payload: NewRx) {}
 }
+
+export class RemoveNewrx implements Action {
+  readonly type = REMOVE_NEWRX;
+
+  constructor(public payload: number) {}
+}
+
+export type Actions = AddNewrx | RemoveNewrx;
