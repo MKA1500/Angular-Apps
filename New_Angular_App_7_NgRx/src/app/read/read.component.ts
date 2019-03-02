@@ -11,7 +11,11 @@ import { AppState } from './../app.state';
 })
 export class ReadComponent implements OnInit {
 
-  constructor() { }
+  newrxes: Observable<NewRx[]>;
+
+  constructor(private store: Store<AppState>) {
+    this.newrxes = store.select('newrx')
+  }
 
   ngOnInit() {
   }
