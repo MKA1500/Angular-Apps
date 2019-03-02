@@ -3,12 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers/newrx.reducer';
+import { ReadComponent } from './read/read.component';
+import { CreateComponent } from './create/create.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReadComponent,
+    CreateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({
+      newrx: reducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
