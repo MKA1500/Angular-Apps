@@ -1,3 +1,16 @@
-<p>
-  create works!
-</p>
+<div class="create row">
+  <div class="col-md-6">
+    <input
+      class="form-control"
+      placeholder="Name"
+      #name>
+    <input
+      class="form-control"
+      placeholder="Url"
+      #url>
+    <button
+      class="btn btn-success"
+      type="submit"
+      (click)="addNewrx(name.value, url.value)">Add New Rx</button>
+  </div>
+</div>
