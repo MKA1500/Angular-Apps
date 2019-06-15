@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'inputs-outputs-event-emitters';
+
+  onIntervalFired(firedNumber: number) {
+    console.log(firedNumber);
+  }
 }
