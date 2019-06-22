@@ -2,22 +2,27 @@
   <div class="row">
     <div class="col-12">
       <game-control
-        (intervalFired)="onIntervalFired($event)">
+        (intervalFired)="onIntervalFired($event)"
+        (currentStaringNumber)="updateCurrentStaringNumber($event)">
       </game-control>
     </div>
   </div>
+  <p class="current">
+    Current starting number: {{ currentStartingNumber }} <br>
+    <small>Stop the game before choosing another one</small>
+  </p>
   <div class="row app-padding">
-    <div class="col-6">
-      <app-odd
-        *ngFor="let oddNumber of oddNumbers"
-        [number]="oddNumber">
-      </app-odd>
-    </div>
     <div class="col-6">
       <app-even
         *ngFor="let evenNumber of evenNumbers"
         [number]="evenNumber">
       </app-even>
+    </div>
+    <div class="col-6">
+      <app-odd
+        *ngFor="let oddNumber of oddNumbers"
+        [number]="oddNumber">
+      </app-odd>
     </div>
   </div>
 </div>

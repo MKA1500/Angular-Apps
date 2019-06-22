@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
+  currentStartingNumber: number = 0;
 
   onIntervalFired(firedNumber: number) {
     console.log(firedNumber);
@@ -17,5 +18,9 @@ export class AppComponent {
     } else {
       this.oddNumbers.push(firedNumber);
     }
+  }
+
+  updateCurrentStaringNumber(currentNum: number) {
+    this.currentStartingNumber = currentNum;
   }
 }

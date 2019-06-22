@@ -12,6 +12,7 @@ import { Component,
 })
 export class GameControlComponent implements OnInit {
   @Output() intervalFired = new EventEmitter<number>();
+  @Output() currentStaringNumber = new EventEmitter<number>();
   @ViewChild('startNumber') startNumberRef: ElementRef;
   interval: any;
   lastNumber = 0;
@@ -26,8 +27,9 @@ export class GameControlComponent implements OnInit {
   startTheGame() {
     if (!this.intervalRunned) {
       this.lastNumber = +this.startNumberRef.nativeElement.value;
+      this.currentStaringNumber.emit(this.lastNumber)
       this.interval = setInterval(() => {
-        this.intervalFired.emit(this.lastNumber + 1);
+        this.intervalFired.emit(this.lastNumber);
         this.lastNumber++;
       }, 1000);
       this.intervalRunned = true;
