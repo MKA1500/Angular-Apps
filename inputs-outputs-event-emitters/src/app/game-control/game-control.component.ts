@@ -1,4 +1,9 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component,
+         OnInit,
+         EventEmitter,
+         Output,
+         ViewChild,
+         ElementRef } from '@angular/core';
 
 @Component({
   selector: 'game-control',
@@ -7,8 +12,10 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
   @Output() intervalFired = new EventEmitter<number>();
-  interval;
+  @ViewChild('startNumber') startNumberRef: ElementRef;
+  interval: any;
   lastNumber = 0;
+  intervalRunned = false;
 
   constructor() { }
 
@@ -17,14 +24,21 @@ export class GameControlComponent implements OnInit {
   }
 
   startTheGame() {
-    this.interval = setInterval(() => {
-      this.intervalFired.emit(this.lastNumber + 1);
-      this.lastNumber++;
-    }, 1000);
+    if (!this.intervalRunned) {
+      this.lastNumber = +this.startNumberRef.nativeElement.value;
+      this.interval = setInterval(() => {
+        this.intervalFired.emit(this.lastNumber + 1);
+        this.lastNumber++;
+      }, 1000);
+      this.intervalRunned = true;
+    }
   }
 
   pauseTheGame() {
-    clearInterval(this.interval);
+    if (this.intervalRunned) {
+      clearInterval(this.interval);
+      this.intervalRunned = false;
+    }
   }
 
 }
