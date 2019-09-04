@@ -1,3 +1,17 @@
 .container {
   margin-top: 30px;
 }
+.active-box {
+  padding: 5px 0;
+  margin: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #c9262c;
+  font-weight: 700;
+}
+
+.active-box p {
+  color: #c9262c;
+  font-weight: 700;
+  margin: 0;
+}
