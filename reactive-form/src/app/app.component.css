@@ -1,3 +1,6 @@
 .main-container {
   padding-top: 2rem;
 }
+.ng-invalid.ng-touched {
+  border-color: red;
+}
